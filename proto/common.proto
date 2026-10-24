@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package acme.common.v1;
+
+// A user's identifier.
+message UserId {
+  string value = 1;
+}
+
+// How a user prefers to be reached.
+enum ContactPreference {
+  CONTACT_PREFERENCE_UNSPECIFIED = 0;
+  CONTACT_PREFERENCE_EMAIL = 1;
+  CONTACT_PREFERENCE_PHONE = 2;
+}

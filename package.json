@@ -1,0 +1,24 @@
+{
+  "name": "proto-content-mapper-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "typecheck": "tsc --noEmit --runExternalCode",
+    "start": "node --import proto-mapper/register src/main.ts",
+    "inspect": "node tools/inspect.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.14.6",
+    "@grpc/proto-loader": "^0.8.0",
+    "proto-mapper": "file:./proto-mapper",
+    "typescript": "^7.1.0-beta"
+  },
+  "allowScripts": {
+    "protobufjs@7.6.6": true
+  }
+}

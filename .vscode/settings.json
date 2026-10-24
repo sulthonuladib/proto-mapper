@@ -1,0 +1,8 @@
+{
+  // The TypeScript 7 language server, not VS Code's built-in 5.x one: content mappers exist only
+  // in TypeScript 7.1, so without this every .proto import is TS2307 "Cannot find module".
+  "js/ts.experimental.useTsgo": true,
+  // The extension's own copy is TypeScript 7.0, which has no content mappers; point it at the
+  // project's 7.1.0-beta instead.
+  "js/ts.tsdk.path": "./node_modules/typescript"
+}

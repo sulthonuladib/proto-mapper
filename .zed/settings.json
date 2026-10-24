@@ -1,0 +1,27 @@
+{
+  // proto-mapper in Zed. Requires the "TypeScript Language Server" extension by Zed Industries
+  // (its id is `typescript-ls`; search "tsgo" in the extension browser).
+  //
+  // Two things matter, and both come from how content mappers were designed:
+  //  - `binary` must point at the workspace's TypeScript 7.1 (the extension's own download is
+  //    7.0, which predates content mappers — every .proto import would be TS2307), and
+  //  - `initialization_options.runExternalCode` is the opt-in that lets the server spawn the
+  //    mapper process (protoc runs inside it); without it, tsconfig.json shows error 18068.
+  "languages": {
+    "TypeScript": {
+      "language_servers": ["typescript-ls", "!vtsls", "!typescript-language-server", "..."]
+    },
+    "TSX": {
+      "language_servers": ["typescript-ls", "!vtsls", "!typescript-language-server", "..."]
+    }
+  },
+  "lsp": {
+    "typescript-ls": {
+      "binary": {
+        "path": "node_modules/typescript/bin/tsc",
+        "arguments": ["--lsp", "--stdio"]
+      },
+      "initialization_options": { "runExternalCode": true }
+    }
+  }
+}

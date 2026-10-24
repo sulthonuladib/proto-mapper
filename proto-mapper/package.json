@@ -1,0 +1,21 @@
+{
+  "name": "proto-mapper",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Import .proto files as typed gRPC clients: a TypeScript content mapper plus a runtime loader.",
+  "exports": {
+    ".": {
+      "types": "./runtime.d.ts"
+    },
+    "./runtime": "./src/loader-runtime.ts",
+    "./register": "./src/register.ts"
+  },
+  "typescript": {
+    "contentMapper": {
+      "exec": ["node", "src/mapper.ts"],
+      "compilerOptions": [],
+      "dynamicConfig": true
+    }
+  }
+}

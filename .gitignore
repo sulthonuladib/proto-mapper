@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# TypeScript 7.1 build info (content-mapped files are never emitted; this is all --noEmit leaves)
+*.tsbuildinfo
+
+# Environment
+.env
+.env.*
+
+# Runtime artifacts from tools/inspect.ts and protoc
+/tmp/
+*.binpb
+
+# Editor noise
+.DS_Store
+*.swp

@@ -1,0 +1,5 @@
+{
+  // Where protoc looks for imports, relative to this file. Read by the mapper's openProject,
+  // which hands it back to tsc as a watched file so an edit re-maps every .proto that uses it.
+  "include": ["proto"]
+}
